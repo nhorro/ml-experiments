@@ -1,2 +1,3 @@
 # pytorch-experiments
-Experiments while learning PyTorch
+
+Experiments while learning PyTorch.
