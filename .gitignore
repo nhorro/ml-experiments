@@ -1,3 +1,5 @@
 yolov7
+videoanalytics
 .ipynb_checkpoints
 *.pt
+triton-deploy/models/1/model.plan
