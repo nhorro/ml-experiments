@@ -1,0 +1,41 @@
+version: '2.3'
+
+services:
+  # Triton inference server
+  # docker run --gpus all --rm --ipc=host --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 \
+  #            -p8000:8000 -p8001:8001 -p8002:8002 
+  #            -v$(pwd)/models:/models nvcr.io/nvidia/tritonserver:22.02-py3 tritonserver --model-repository=/models --strict-model-config=false --log-verbose 1
+  triton:
+    image: nvcr.io/nvidia/tritonserver:22.02-py3
+    runtime: nvidia
+    volumes:
+      - ${PWD}/models:/models
+    ports:
+      - 8000:8000
+      - 8001:8001
+      - 8002:8002
+    command: ["tritonserver", "--model-repository=/models", "--strict-model-config=false", "--log-verbose=1"]
+    ipc: host
+    shm_size: 1g    
+    ulimits:
+      memlock: -1
+      stack: 67108864
+
+  prometheus:
+    image: bitnami/prometheus:latest
+    volumes:
+      - $PWD/prometheus.yml:/opt/bitnami/prometheus/conf/prometheus.yml
+    ports:
+      - 9090:9090
+      
+  grafana:
+    image: grafana/grafana:7.5.7
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+    volumes:
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - grafana-data:/var/lib/grafana
+      
+volumes:
+  grafana-data:
