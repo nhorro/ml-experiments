@@ -1,6 +1,6 @@
-# Experimentos con PyTorch
+# Experimentos con Machine Learning
 
-Este repositorio contiene:
+Ensayos de técnicas, algoritmos y herramientas que pueden ser útiles para futuros proyectos.
 
-- [Cuadernos con tutoriales y experimentos con PyTorch](./notebooks)
-- [Ensayos de despliegue para puesta en producción de modelos](./deployments)
+- [Cuadernos de desarrollo de modelos](./notebooks)
+- [Despliegues con docker-compose](./deployments)

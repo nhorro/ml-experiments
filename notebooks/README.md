@@ -1,15 +1,24 @@
-Tutoriales y experimentos con PyTorch
-=====================================
+Experimentos con PyTorch
+========================
 
-**Ambiente**:
 
-- PyTorch instalado con conda siguiendo pasos del repositorio oficial.
-- Jupyterlab.
-- Extras para ONNX, TensorRT, etc. 
+
+
+
+Ejecución con Jupyter
+---------------------
 
 ~~~bash
 jupyter-lab
 ~~~
+
+Ambiente
+--------
+
+- PyTorch instalado con conda siguiendo pasos del repositorio oficial.
+- Jupyterlab.
+- Extras para ONNX, TensorRT, etc. 
+- ML Flow.
 
 Exportar ambiente:
 

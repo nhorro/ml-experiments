@@ -5,7 +5,6 @@ Docker-compose con Triton, Prometheus y Grafana.
 
 ![deployment](doc/assets/deployment.png "Despliegue en docker-compose").
 
-
 **Instrucciones**
 
 Iniciar servicio:
